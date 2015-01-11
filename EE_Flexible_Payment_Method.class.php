@@ -32,7 +32,7 @@ class EE_Flexible_Payment_Method extends EE_Addon {
 				'admin_callback' => 'additional_flexible_admin_hooks',
 				// if plugin update engine is being used for auto-updates. not needed if PUE is not being used.
 				'pue_options' => array(
-					'pue_plugin_slug' => 'espresso-flexible-payment-method',
+					'pue_plugin_slug' => 'eea-flexible-payment-method',
 					'plugin_basename' => EE_FLEXIBLE_BASENAME,
 					'checkPeriod' => '24',
 					'use_wp_update' => FALSE,
