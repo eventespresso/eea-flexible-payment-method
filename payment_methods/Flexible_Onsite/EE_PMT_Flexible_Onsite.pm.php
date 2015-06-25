@@ -72,7 +72,7 @@ class EE_PMT_Flexible_Onsite extends EE_PMT_Base {
 				'payment_instructions'=>new EE_Text_Area_Input(array(
 					'html_label_text'=>  sprintf(__("Instructions %s", "event_espresso"),  $this->get_help_tab_link()),
 					'default'=> __("You can pay the day of the event. Be sure to arrive early! We accept cash and VISA, MasterCard, Discover, American Express through the Square app and PayPal here app.", 'event_espresso'),
-					'validation_strategies' => array( new EE_Simple_HTML_Validation_Strategy() ),
+					'validation_strategies' => array( new EE_Full_HTML_Validation_Strategy() ),
 				)),
 			),
 			'exclude'=>array('PMD_debug_mode')
