@@ -4,7 +4,7 @@
   Plugin URI: http://www.eventespresso.com
   Description: The Event Espresso flexible payment method adds a simple textarea for payment information (e.g. offline or online payment instructions).
 
-  Version: 1.0.0.rc.004
+  Version: 1.0.0.rc.005
 
   Author: Event Espresso
   Author URI: http://www.eventespresso.com
@@ -38,7 +38,7 @@
  *
  * ------------------------------------------------------------------------
  */
-define( 'EE_FLEXIBLE_VERSION', '1.0.0.rc.004' );
+define( 'EE_FLEXIBLE_VERSION', '1.0.0.rc.005' );
 define( 'EE_FLEXIBLE_PLUGIN_FILE',  __FILE__ );
 
 function load_espresso_flexible() {
