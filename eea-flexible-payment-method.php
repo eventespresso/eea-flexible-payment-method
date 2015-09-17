@@ -1,6 +1,6 @@
 <?php
 /*
-  Plugin Name: Event Espresso - Flexible Payment Method
+  Plugin Name: Event Espresso - Flexible Payment Method (EE 4.6+)
   Plugin URI: http://www.eventespresso.com
   Description: The Event Espresso flexible payment method adds a simple textarea for payment information (e.g. offline or online payment instructions).
 
