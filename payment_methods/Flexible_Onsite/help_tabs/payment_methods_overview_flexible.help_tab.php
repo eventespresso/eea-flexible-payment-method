@@ -1,8 +1,8 @@
-<h3><?php _e('Flexible', 'event_espresso'); ?></h3>
+<strong><?php _e('Flexible', 'event_espresso'); ?></strong>
 <p>
 <?php _e('Adjust the settings for the flexible payment method. This is a flexible payment option that allows you to provide your attendees/registrants with instructions on how to complete their payment (e.g. pay at the door, call a number to complete a payment, etc).', 'event_espresso'); ?>
 </p>
-<h3><?php _e('Flexible Settings', 'event_espresso'); ?></h3>
+<strong><?php _e('Flexible Settings', 'event_espresso'); ?></strong>
 <ul>
 <li>
 <strong><?php _e('Title', 'event_espresso'); ?></strong><br />
