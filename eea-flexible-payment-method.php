@@ -4,7 +4,7 @@
   Plugin URI: http://www.eventespresso.com
   Description: Flexible payments is an off-site payment option for Event Espresso for accepting payments. You can provide your registrants/attendee with specific information on how to pay for their registrations (e.g. call a phone number to pay, pay at the event, etc).
 
-  Version: 1.0.0.rc.009
+  Version: 1.0.0.p
 
   Author: Event Espresso
   Author URI: http://www.eventespresso.com
@@ -38,7 +38,7 @@
  *
  * ------------------------------------------------------------------------
  */
-define( 'EE_FLEXIBLE_VERSION', '1.0.0.rc.009' );
+define( 'EE_FLEXIBLE_VERSION', '1.0.0.p' );
 define( 'EE_FLEXIBLE_PLUGIN_FILE',  __FILE__ );
 
 function load_espresso_flexible() {
