@@ -1,0 +1,73 @@
+language: php
+cache:
+  apt: true
+env:
+  global:
+  - EE_VERSION=master
+  matrix:
+  - WP_VERSION=latest WP_MULTISITE=0
+  - WP_VERSION=latest WP_MULTISITE=1
+  - WP_VERSION=4.1 WP_MULTISITE=0
+  - WP_VERSION=4.1 WP_MULTISITE=1
+php:
+- 5.3
+- 5.4
+- 5.5
+- 5.6
+- 7.0
+- 7.1
+matrix:
+  exclude:
+  - php: 5.3
+    env: WP_VERSION=4.1 WP_MULTISITE=1
+  - php: 5.3
+    env: WP_VERSION=latest WP_MULTISITE=1
+  - php: 5.4
+    env: WP_VERSION=4.1 WP_MULTISITE=1
+  - php: 5.4
+    env: WP_VERSION=latest WP_MULTISITE=1
+  - php: 5.5
+    env: WP_VERSION=4.1 WP_MULTISITE=1
+  - php: 5.5
+    env: WP_VERSION=latest WP_MULTISITE=1
+  - php: 7.1
+    env: WP_VERSION=4.1 WP_MULTISITE=0
+  - php: 7.1
+    env: WP_VERSION=4.1 WP_MULTISITE=1
+  - php: 7.0
+    env: WP_VERSION=4.1 WP_MULTISITE=0
+  - php: 7.0
+    env: WP_VERSION=4.1 WP_MULTISITE=1
+  - php: hhvm
+    env: WP_VERSION=4.1 WP_MULTISITE=0
+  - php: hhvm
+    env: WP_VERSION=4.1 WP_MULTISITE=1
+  fast_finish: true
+before_install:
+- |
+  if [[ "$SKIP_XDEBUG_REMOVE" != "true" ]]; then
+    phpenv config-rm xdebug.ini
+    echo "xdebug removed";
+  fi
+before_script:
+- bash tests/bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
+- . tests/bin/setup-addon-tests.sh
+- export PATH="$HOME/.composer/vendor/bin:$PATH"
+- |
+  if [[ ${TRAVIS_PHP_VERSION:0:2} == "7." ]]; then
+    composer global require "phpunit/phpunit=5.7.*"
+  else
+    composer global require "phpunit/phpunit=4.8.*"
+  fi
+- mysql --version
+- phpunit --version
+- phpenv versions
+script: cd tests; phpunit;
+notifications:
+  slack:
+    rooms:
+      secure: "bs32WF1Fbr8DZ+08Kc1Fzv+v8aeyhmrXkKGZaPicn61Nk1u0JYsPXLlR6llpjerlKAN6JCKh3UcPHF6VfwsZwfYA/1uchirs6dc+g5in/U+ClQD6BtErXPCkhp8n5Lb0IyEP39vWYBzINyIJS4YuojoIOMtktTONyMHEwqXX+RLIpxmsYF4QYr3CHGZhqBGzB/G20hFgYW2IQf3Wd3bgGyaW0QTg+q2OMHlgq3Y4/VUZnpIKVZ1T6iYu41VPInBRUR5VA5rnLg2UaFzKyV7is9flfLX3vYvdiFj7gUtxNRTMrRq1DanDJdvr5+XZaJRUiXr6SGOnM4D2PvKvjsuWL/Y4goxE5DQexF/1ymGCx9XKBO2lFJ6S/vRlXV7az/hBReUpx3N4FPi9tVYS9dd3ciPfLLSnzFrWQ1qzRDkrRgLZ3QoRXdjCsaVa/6CT1JbKevvTZu8wreN4GjpdJqUu+FuwVPefxHosl2SURdCNPh89Q4MEDFjIEO1Q+jPynt6AzcvKJdpNmXe0+nFubRlw20fAZ1jfIvCEB9BVeHfK3NBfU7WJFYXH+LC61PEm1DlFMOn60VbzsJqI+bHVrLcpE9LoH/5efeoIBAFN0jGyZ/vW6zEI0HpiGbhJNQkCKryB3rzElPX7eybrIZc2Moe+/tvH5xaUQ3wTlU7Cz2eoFiw="
+    on_success: always
+    on_failure: always
+    on_start: always
+
