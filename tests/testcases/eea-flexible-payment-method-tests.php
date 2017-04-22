@@ -17,8 +17,7 @@ class eea_flexible_payment_method_tests extends EE_UnitTestCase
      */
     function test_loading_new_payment_method()
     {
-        $this->assertEquals(has_action('AHEE__EE_System__load_espresso_addons', 'load_espresso_new_payment_method'),
-            10);
+        $this->assertEquals(10, has_action('AHEE__EE_System__load_espresso_addons', 'load_espresso_flexible'));
         $this->assertTrue(class_exists('EE_Flexible_Payment_Method'));
     }
 }
