@@ -10,7 +10,7 @@ define( 'EE_FLEXIBLE_URL', plugin_dir_url( __FILE__ ) );
  * @package			Event Espresso
  * @subpackage		espresso-flexible-payment-method
  * @author			Event Espresso
- * @ version		 	$VID:$
+ * 
  */
 class EE_Flexible_Payment_Method extends EE_Addon {
 
