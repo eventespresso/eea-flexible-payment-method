@@ -38,16 +38,18 @@
  *
  * ------------------------------------------------------------------------
  */
-define( 'EE_FLEXIBLE_VERSION', '1.0.1.rc.007' );
-define( 'EE_FLEXIBLE_PLUGIN_FILE',  __FILE__ );
+define('EE_FLEXIBLE_VERSION', '1.0.1.rc.007');
+define('EE_FLEXIBLE_PLUGIN_FILE', __FILE__);
 
-function load_espresso_flexible() {
-  if ( class_exists( 'EE_Addon' ) ) {
-  	require_once ( plugin_dir_path( __FILE__ ) . 'EE_Flexible_Payment_Method.class.php' );
-  	EE_Flexible_Payment_Method::register_addon();
-  }
+function load_espresso_flexible()
+{
+    if (class_exists('EE_Addon')) {
+        require_once(plugin_dir_path(__FILE__) . 'EE_Flexible_Payment_Method.class.php');
+        EE_Flexible_Payment_Method::register_addon();
+    }
 }
-add_action( 'AHEE__EE_System__load_espresso_addons', 'load_espresso_flexible' );
+
+add_action('AHEE__EE_System__load_espresso_addons', 'load_espresso_flexible');
 
 
 // End of file espresso_flexible_payment_method.php
