@@ -1,18 +1,24 @@
 {
-  "versionFile": "eea-flexible-payment-method.php",
-  "slug": "eea-flexible-payment-method",
-  "name": "EE4 Flexible Payment Method",
-  "archiveBaseUrl": "http:\/\/build.eventespresso.com\/",
-  "archiveBasePath": "~\/www\/build\/",
-  "releaseFilesRemove": [
-    "src\/tests\/**",
-    "src\/info.json",
-    "src\/circle.yml",
-    "src\/readme.txt",
-    "src/.travis.yml"
-  ],
-  "awsbucket": "",
-  "awsregion": "",
-  "srcBuildFolderName": "eea-flexible-payment-method",
-  "textDomain": "event_espresso"
+	"versionFile": "eea-flexible-payment-method.php",
+	"slug": "eea-flexible-payment-method",
+	"name": "EE4 Flexible Payment Method",
+	"jsBuildDirectory": ".\/",
+	"wpi18nJsPotFilePath": ".\/languages\/ee-js.pot",
+	"releaseFilesRemove": [
+		"src\/tests\/**",
+		"src\/acceptance_tests\/**",
+		"src\/info.json",
+		"src\/.travis.yml",
+		"src\/.github\/**",
+		"src\/assets\/src\/**",
+		"src\/eslint\/**",
+		"src\/.babelrc",
+		"src\/.editorconfig",
+		"src\/.eslintignore",
+		"src\/.eslintrc.js",
+		"src\/.nvmrc",
+		"src\/.postcss.config.js"
+	],
+	"srcBuildFolderName": "eea-flexible-payment-method",
+	"textDomain": "event_espresso"
 }
